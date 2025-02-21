@@ -14,7 +14,7 @@ app.post('/add', (req, res) => {
   if (typeof a !== 'number' || typeof b !== 'number') {
     return res
       .status(400)
-      .json({ error: 'Invalid input.  a and b must be numbers.' });
+      .json({ error: 'Invalid input. a and b must be numbers.' });
   }
   const result = a + b;
   res.status(200).json({ result });
