@@ -3,6 +3,10 @@ const app = require('../index');
 
 let server;
 
+beforeAll(() => {
+  server = app.listen();
+});
+
 afterAll(done => {
   server.close(() => {
     done();
