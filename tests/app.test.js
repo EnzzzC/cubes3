@@ -3,6 +3,12 @@ const app = require('../index');
 
 let server;
 
+afterAll(done => {
+  server.close(() => {
+    done();
+  });
+});
+
 describe('GET /', () => {
   it('devrait retourner un message de bienvenue', async () => {
     const res = await request(app).get('/');
