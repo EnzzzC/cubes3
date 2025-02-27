@@ -3,14 +3,6 @@ const app = require('../index');
 
 let server;
 
-beforeAll(() => {
-  server = app.listen(); // Démarrer le serveur si nécessaire
-});
-
-afterAll(done => {
-  server.close(done); // Fermer proprement le serveur après les tests
-});
-
 describe('GET /', () => {
   it('devrait retourner un message de bienvenue', async () => {
     const res = await request(app).get('/');
